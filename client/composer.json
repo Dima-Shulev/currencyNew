@@ -1,0 +1,27 @@
+{
+    "name": "root/html",
+    "authors": [
+        {
+            "name": "ЕTestUser"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "nette/database": "v3.1.6",
+        "ext-pdo": ">=4",
+        "nette/caching": "^3.0",
+        "nette/utils": "^3.2.1",
+        "walkor/workerman": "^4.1",
+        "soneritics/pcntl": "^1.1",
+        "illuminate/database": "v10.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Models\\": "models/",
+            "Controllers\\": "controllers/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    }
+}

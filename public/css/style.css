@@ -1,0 +1,129 @@
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width:320px;
+}
+.title{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2px;
+    background-color: #c8e2e8;
+    border-left: 1px solid #75cbd5;
+    border-right: 2px solid #75cbd5;
+    border-bottom: 2px solid #75cbd5;
+    border-radius: 3px;
+    min-width:260px;
+    width:85vw;
+}
+h4{
+    margin:8px;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1ecec;
+    padding: 2px;
+}
+
+.currency{
+    width: 25vw;
+    background-color: #d1ecec;
+    padding: 18px;
+    border-radius: 5px;
+    border-right:1px solid #75cbd5;
+}
+
+#chart_div{
+    width: 50vw;
+    height: 40vh;
+    margin-bottom: 20px;
+}
+
+.order {
+   margin-top:70px;
+}
+
+#orderTime{
+    display: block;
+}
+#orderValue{
+    display: block;
+}
+
+.timeDate{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: white;
+    background-color: #3192cb;
+    border: 1px solid #212f29;
+    border-radius: 3px;
+    padding: 3px;
+    min-width: 150px;
+    width:84.5vw;
+}
+
+.online{
+    min-width:160px;
+    width:15vw;
+    margin:10px;
+}
+.history{
+    margin:10px;
+}
+#online{
+   margin-left:15px;
+   float:right;
+}
+
+
+
+@media screen and (max-width: 727px) {
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #d1ecec;
+        padding: 2px;
+        min-width:260px;
+
+    }
+    .currency{
+        width: 84vw;
+        background-color: #d1ecec;
+        padding: 3px;
+        border-radius: 5px;
+        border-right:1px solid #75cbd5;
+    }
+
+    .draw {
+        width: 85vw;
+    }
+
+    #chart_div{
+        width: 83vw;
+        margin-bottom: 20px;
+    }
+
+    .order {
+        float: right;
+    }
+}
+

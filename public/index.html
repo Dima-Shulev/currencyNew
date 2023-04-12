@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Диограмма</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="public/js/currect.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            let data = new СurrencyDate;
+            data.chartsGoogle();
+        }
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+       <div class="title">
+           <h4>Диаграмма</h4>
+           <div class="container">
+                 <div class="currency">
+                     <hr>
+                        <div class="online">
+                         <h3>Онлайн</h3>
+                        <h5>Выберите валют:</h5>
+                        <select id="select">
+                             <option value="#">-/-</option>
+                        </select>
+                        <button id="online">Старт</button><br>
+                        </div>
+                        <hr>
+                        <div class="history">
+                            <h3>История</h3>
+                            <div>
+                                <select id="cur">
+                                    <option selected value="def">-/-</option>
+                                </select>
+                            </div>
+
+                            <h5>Фильтр: </h5>
+                                <select id="filter">
+                                    <option selected value="default">-/-</option>
+                                    <option value="timeType">Время</option>
+                                    <option value="currencyType">Значения</option>
+                                </select>
+                        </div>
+                        <hr>
+                     <script type="text/javascript">
+                         let sort = new СurrencyDate;
+                         sort.orderSort();
+                         sort.getCurrencyDb();
+                     </script>
+                     <div id="orderTime" style = "display: none">
+                         <b>Сортировать по минутам: </b>
+                         <select id="selectHow">
+                             <option selected>-/-</option>
+                             <option value="one">1</option>
+                             <option value="five">5</option>
+                             <option value="ten">10</option>
+                             <option value="fifteen">15</option>
+                             <option value="thirty">30</option>
+                         </select>
+                     </div>
+                     <div id="orderValue" style = "display: none">
+                         <b>Сортировать по значению: </b>
+                         <select id="selectValue">
+                             <option selected>-/-</option>
+                             <option value="min">От меньшего к большему</option>
+                             <option value="max">От большего к меньшему</option>
+                         </select>
+                     </div>
+                  </div>
+               <div id="chart_div"></div>
+          </div>
+           <div class="timeNow">
+           </div>
+       </div>
+    </div>
+    <script src="public/js/modul.js"></script>
+    <script type="text/javascript">
+        let timeModul = new ModulTime();
+        timeModul.getTimes();
+    </script>
+</body>
+</html>
