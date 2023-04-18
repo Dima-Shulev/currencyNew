@@ -5,10 +5,13 @@
     <link rel="stylesheet" href="public/css/style.css">
     <title>Диограмма</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="public/js/currect.js"></script>
+    <script src="public/js/currencydate.js"></script>
+    <script src="public/js/allsorttoblock.js"></script>
+    <script src="public/js/responseajax.js"></script>
+    <script src="public/js/draw.js"></script>
     <script type="text/javascript">
         window.onload = function(){
-            let data = new СurrencyDate;
+            let data = new CurrencyDate;
             data.chartsGoogle();
         }
     </script>
@@ -27,7 +30,7 @@
                         <select id="select">
                              <option value="#">-/-</option>
                         </select>
-                        <button id="online">Старт</button><br>
+                        <button id="online" type="button">Старт</button><br>
                         </div>
                         <hr>
                         <div class="history">
@@ -47,9 +50,10 @@
                         </div>
                         <hr>
                      <script type="text/javascript">
-                         let sort = new СurrencyDate;
-                         sort.orderSort();
-                         sort.getCurrencyDb();
+                         let getCurrency = new ResponseAjax();
+                         let allSort = new AllSortToBlock;
+                         getCurrency.getCurrencyDb();
+                         allSort.orderSort();
                      </script>
                      <div id="orderTime" style = "display: none">
                          <b>Сортировать по минутам: </b>

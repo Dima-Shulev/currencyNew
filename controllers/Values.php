@@ -22,7 +22,7 @@ class Values{
     public static function getDefault($currencyId){
         $valuesDefault = Value::select("value","created_at")
             ->where("currency_id","=",(int)$currencyId)
-            ->orderBy("created_at","ASC")
+            ->orderBy("created_at","DESC")
             ->take(5)
             ->get();
         if(count($valuesDefault) > 0){
@@ -34,7 +34,7 @@ class Values{
         $valuesOneMinute = Value::select("value","created_at","currency_id")
             ->where("currency_id","=",(int)$currencyId)
             ->where("created_at","like","%%%%-%%-%% %%:%%:00")
-            ->orderBy("created_at","ASC")
+            ->orderBy("created_at","DESC")
             ->take(5)
             ->get();
         if(count($valuesOneMinute) > 0){
@@ -59,7 +59,7 @@ class Values{
         $valuesTenMinute = Value::select("value","created_at","currency_id")
             ->where("currency_id",(int)$currencyId)
             ->where("created_at","like","%%%%-%%-%% %%:%0:00")
-            ->orderBy("created_at","DESC")
+            ->orderBy("created_at","ASC")
             ->take(5)
             ->get();
         if(count($valuesTenMinute) > 0){
@@ -72,6 +72,7 @@ class Values{
             ->orWhere([["currency_id","=",(int)$currencyId],["created_at","like","%%%%-%%-%% %%:30:00"]])
             ->orWhere([["currency_id","=",(int)$currencyId],["created_at","like","%%%%-%%-%% %%:45:00"]])
             ->orWhere([["currency_id","=",(int)$currencyId],["created_at","like","%%%%-%%-%% %%:00:00"]])
+            ->orderBy("created_at","ASC")
             ->take(5)
             ->get();
         if(count($valuesFifteenMinute) > 0){
@@ -82,8 +83,8 @@ class Values{
         $valuesThirtyMinute = Value::select("value","created_at")
             ->where([["currency_id",(int)$currencyId],["created_at","like","%%%%-%%-%% %%:00:00"]])
             ->orWhere([["currency_id",(int)$currencyId],["created_at","like","%%%%-%%-%% %%:30:00"]])
-            ->orderBy("created_at","DESC")
-            ->take(5)
+            ->orderBy("created_at","ASC")
+            ->take(3)
             ->get();
         if(count($valuesThirtyMinute) > 0){
             return $valuesThirtyMinute;

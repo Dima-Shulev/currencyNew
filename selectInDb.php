@@ -24,7 +24,7 @@ class SelectInDb{
             $how = str_replace(["\""], "", $key);
             $how = substr($how, 6);
 
-
+            //если было
             if ($how === "default") {
                 $currencyId = Currencys::currencyId($currency);
                 $valuesData = Values::getDefault($currencyId->id);
