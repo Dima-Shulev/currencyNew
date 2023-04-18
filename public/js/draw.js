@@ -14,9 +14,10 @@ class Draw{
         drawNow[0] = [];
         drawNow[0][0] = "Время";
         drawNow[0][1] = this.nameCurrency;
+        //console.log(obj);
         for (let i = 0, j = 1; i < obj.length; i++, j++) {
             drawNow[j] = [];
-            drawNow[j][0] = obj[i].created_at.substring(10);
+            drawNow[j][0] = obj[i].created_at;
             drawNow[j][1] = obj[i].value;
         }
         this.data = google.visualization.arrayToDataTable(drawNow);
