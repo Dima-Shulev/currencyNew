@@ -6,6 +6,7 @@ class AllSortToBlock extends CurrencyDate{
 
     constructor(){
         super();
+        this.allOrder = document.querySelector("#filter");
     }
 
     orderSort(){

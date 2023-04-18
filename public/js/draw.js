@@ -16,7 +16,7 @@ class Draw{
         drawNow[0][1] = this.nameCurrency;
         for (let i = 0, j = 1; i < obj.length; i++, j++) {
             drawNow[j] = [];
-            drawNow[j][0] = obj[i].created_at;
+            drawNow[j][0] = obj[i].created_at.substring(10);
             drawNow[j][1] = obj[i].value;
         }
         this.data = google.visualization.arrayToDataTable(drawNow);
@@ -30,11 +30,11 @@ class Draw{
         this.chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         this.chart.draw(this.data, this.options);
     }
-/*
-    drawChart(obj) {
+
+    drawChart(cur,obj) {
         for (let s = 0, h = 0; s < obj.time.length, h < obj.value.length; s++, h++) {
             this.data = google.visualization.arrayToDataTable([
-                ["Время", this.select.value],
+                ["Время", cur],
                 [obj.time[s], obj.value[h]],
                 [obj.time[++s], obj.value[++h]],
                 [obj.time[++s], obj.value[++h]],
@@ -51,6 +51,4 @@ class Draw{
         this.chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         this.chart.draw(this.data, this.options);
     }
-    */
-
 }

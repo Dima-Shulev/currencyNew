@@ -9,7 +9,6 @@ class ResponseAjax extends CurrencyDate
     constructor(){
         super();
     }
-
     //запрос и получение данных с db
     ajax(bodyDate, url, ContentType) {
         fetch(url, {
@@ -22,7 +21,6 @@ class ResponseAjax extends CurrencyDate
             .then(result => this.draw.drawChartDb(result))
             .catch(error => console.log(error))
     }
-
     //запрос к db всех валют
     newAjax(bodyDate, url, ContentType) {
         fetch(url, {
@@ -35,10 +33,9 @@ class ResponseAjax extends CurrencyDate
             .then(result => this.allCurrency(result))
             .catch(error => console.log(error))
     }
-
     //вывод валют из db
-    getCurrencyDb() {
-        this.newAjax(this.cur, "selectCurrency.php", "application/x-www-form-urlencoded");
+    getCurrencyDb(){
+        this.newAjax("", "selectCurrency.php", "application/x-www-form-urlencoded");
     }
 
     //отправка выбора пользователя
@@ -49,6 +46,7 @@ class ResponseAjax extends CurrencyDate
             this.currencyDb.value = cur[oneCurrency].name;
             this.getCur.append(this.currencyDb);
         }
+
         this.getCur.addEventListener("click", (event) => {
             this.nameCurrency = String(event.target.value);
 
@@ -56,7 +54,6 @@ class ResponseAjax extends CurrencyDate
 
             this.selectHow = document.querySelector("#selectHow");
             this.howValue = document.querySelector("#selectValue");
-
             //сортировка по интервалам времени
             this.selectHow.addEventListener("click", (event) => {
                 if (this.selectHow.value) {
@@ -78,7 +75,6 @@ class ResponseAjax extends CurrencyDate
                     }
                 }
             });
-
             //сортировка по значению меньше->больше или наоборот
             this.howValue.addEventListener("click", (ev) => {
                 if (this.howValue) {
